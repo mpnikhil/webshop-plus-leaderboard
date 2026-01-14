@@ -11,3 +11,4 @@ env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", OPENAI_API_BASE = "${OPENAI_API_BA
 num_tasks = 8
 task_types = ["all"]
 timeout_per_task = 300
+# Initial assessment run
