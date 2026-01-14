@@ -62,7 +62,7 @@ services:
     image: {green_image}
     platform: linux/amd64
     container_name: green-agent
-    command: ["--host", "0.0.0.0", "--port", "{green_port}", "--card-url", "http://green-agent:{green_port}"]
+    command: ["--host", "0.0.0.0", "--port", "{green_port}", "--card-url", "http://green-agent:{green_port}", "--advertise-host", "green-agent"]
     environment:{green_env}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:{green_port}/.well-known/agent-card.json"]
@@ -148,6 +148,10 @@ def parse_scenario(scenario_path: Path) -> dict[str, Any]:
 
     # Check for duplicate participant names
     names = [p.get("name") for p in participants]
+    if "green-agent" in names or "agentbeats-client" in names:
+        print("Error: Participant names 'green-agent' and 'agentbeats-client' are reserved.")
+        sys.exit(1)
+
     duplicates = [name for name in set(names) if names.count(name) > 1]
     if duplicates:
         print(f"Error: Duplicate participant names found: {', '.join(duplicates)}")
