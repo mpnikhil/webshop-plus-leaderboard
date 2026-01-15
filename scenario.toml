@@ -8,6 +8,6 @@ name = "shopper"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", OPENAI_API_BASE = "${OPENAI_API_BASE}", LLM_MODEL = "${LLM_MODEL}" }
 
 [config]
-num_tasks = 8
+num_tasks = 10
 task_types = ["all"]
 timeout_per_task = 300
