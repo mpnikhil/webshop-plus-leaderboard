@@ -1,0 +1,379 @@
+{
+  "participants": {
+    "shopper": "019bc88d-d2d0-7ff3-a5a6-ac200b1475f1"
+  },
+  "results": [
+    {
+      "assessment_id": "552ed629-b27e-4311-90ac-cb955c502033",
+      "timestamp": "2026-01-16T20:55:41.002726",
+      "participants": {
+        "shopper": "http://shopper:9009/"
+      },
+      "config": {
+        "task_types": [
+          "all"
+        ],
+        "num_tasks": 8,
+        "timeout_per_task": 300,
+        "include_memory_tasks": true
+      },
+      "results": [
+        {
+          "task_id": "budget_001",
+          "task_type": "budget_constrained",
+          "completed": false,
+          "success": true,
+          "actions_taken": 6,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.938949209413918,
+          "metrics": {
+            "budget": 50.0,
+            "total_spent": 20.35026352869395,
+            "required_items_matched": 2,
+            "required_items_total": 2,
+            "optimization_goal": "minimize_cost"
+          },
+          "scoring_breakdown": [
+            {
+              "name": "budget_compliance",
+              "weight": 0.3,
+              "raw_value": 20.35026352869395,
+              "normalized_score": 1.0,
+              "explanation": "Within budget: $20.35 / $50.00"
+            },
+            {
+              "name": "item_completion",
+              "weight": 0.4,
+              "raw_value": {
+                "required": 2,
+                "optional": 0
+              },
+              "normalized_score": 1.0,
+              "explanation": "Matched 2/2 required items"
+            },
+            {
+              "name": "quality_optimization",
+              "weight": 0.3,
+              "raw_value": "minimize_cost",
+              "normalized_score": 0.7964973647130604,
+              "explanation": "Cost minimization: saved $29.65 (59%)"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "budget_002",
+          "task_type": "budget_constrained",
+          "completed": true,
+          "success": false,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.3942,
+          "metrics": {
+            "budget": 35.0,
+            "total_spent": 10.99,
+            "required_items_matched": 0,
+            "required_items_total": 1,
+            "optimization_goal": "maximize_quality"
+          },
+          "scoring_breakdown": [
+            {
+              "name": "budget_compliance",
+              "weight": 0.3,
+              "raw_value": 10.99,
+              "normalized_score": 1.0,
+              "explanation": "Within budget: $10.99 / $35.00"
+            },
+            {
+              "name": "item_completion",
+              "weight": 0.4,
+              "raw_value": {
+                "required": 0,
+                "optional": 0
+              },
+              "normalized_score": 0.0,
+              "explanation": "Matched 0/1 required items"
+            },
+            {
+              "name": "quality_optimization",
+              "weight": 0.3,
+              "raw_value": "maximize_quality",
+              "normalized_score": 0.314,
+              "explanation": "Quality optimization: 31% of budget utilized"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "memory_001",
+          "task_type": "preference_memory",
+          "completed": true,
+          "success": true,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 1.0,
+          "metrics": {
+            "attribute_to_recall": "fit",
+            "acceptable_values": [
+              "slim fit",
+              "slim",
+              "tailored"
+            ]
+          },
+          "scoring_breakdown": [
+            {
+              "name": "recall_accuracy",
+              "weight": 0.6,
+              "raw_value": [
+                "slim fit",
+                "slim",
+                "tailored"
+              ],
+              "normalized_score": 1.0,
+              "explanation": "LLM confirmed preference recall"
+            },
+            {
+              "name": "consistency",
+              "weight": 0.4,
+              "raw_value": null,
+              "normalized_score": 1.0,
+              "explanation": "Consistency implied by accurate recall in single-session test"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "memory_002",
+          "task_type": "preference_memory",
+          "completed": true,
+          "success": false,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.0,
+          "metrics": {
+            "attribute_to_recall": "type",
+            "acceptable_values": [
+              "loafers",
+              "slip-ons",
+              "loafer"
+            ]
+          },
+          "scoring_breakdown": [
+            {
+              "name": "recall_accuracy",
+              "weight": 0.6,
+              "raw_value": [
+                "loafers",
+                "slip-ons",
+                "loafer"
+              ],
+              "normalized_score": 0.0,
+              "explanation": "LLM rejected preference match"
+            },
+            {
+              "name": "consistency",
+              "weight": 0.4,
+              "raw_value": null,
+              "normalized_score": 0.0,
+              "explanation": "Consistency implied by accurate recall in single-session test"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "negative_001",
+          "task_type": "negative_constraint",
+          "completed": true,
+          "success": true,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 1.0,
+          "metrics": {
+            "violations": [],
+            "violation_count": 0,
+            "forbidden_attributes": [
+              "slim fit"
+            ],
+            "forbidden_terms": [],
+            "required_attributes": []
+          },
+          "scoring_breakdown": [
+            {
+              "name": "constraint_satisfaction",
+              "weight": 0.5,
+              "raw_value": 0,
+              "normalized_score": 1.0,
+              "explanation": "No constraint violations detected"
+            },
+            {
+              "name": "positive_match",
+              "weight": 0.5,
+              "raw_value": [],
+              "normalized_score": 1.0,
+              "explanation": "No required attributes specified"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "negative_002",
+          "task_type": "negative_constraint",
+          "completed": true,
+          "success": false,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.375,
+          "metrics": {
+            "violations": [
+              "forbidden attribute: slip on"
+            ],
+            "violation_count": 1,
+            "forbidden_attributes": [
+              "slip-ons",
+              "slip on"
+            ],
+            "forbidden_terms": [],
+            "required_attributes": [
+              "rubber sole"
+            ]
+          },
+          "scoring_breakdown": [
+            {
+              "name": "constraint_satisfaction",
+              "weight": 0.5,
+              "raw_value": 1,
+              "normalized_score": 0.5,
+              "explanation": "1 violation(s): forbidden attribute: slip on"
+            },
+            {
+              "name": "positive_match",
+              "weight": 0.5,
+              "raw_value": [
+                "rubber sole"
+              ],
+              "normalized_score": 1.0,
+              "explanation": "Matched 1/1 required attributes"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "compare_001",
+          "task_type": "comparative_reasoning",
+          "completed": false,
+          "success": false,
+          "actions_taken": 2,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.45,
+          "metrics": {
+            "products_explored": 0,
+            "minimum_required": 2,
+            "justification_provided": true,
+            "justification_length": 327,
+            "comparison_request": "Compare two dress shirts - one slim fit and one classic fit. Which has better value?"
+          },
+          "scoring_breakdown": [
+            {
+              "name": "exploration",
+              "weight": 0.3,
+              "raw_value": 0,
+              "normalized_score": 0.0,
+              "explanation": "No products explored"
+            },
+            {
+              "name": "justification_provided",
+              "weight": 0.2,
+              "raw_value": true,
+              "normalized_score": 1.0,
+              "explanation": "Agent provided comparison justification"
+            },
+            {
+              "name": "justification_quality",
+              "weight": 0.5,
+              "raw_value": "The Amazon Essentials Men's Slim-fit shirt ($18.50) offers better value than the Canadian Tuxedo Classic fit ($19.99). Slim fit is more versatile for modern dressing, and the $1.49 price difference al",
+              "normalized_score": 0.5,
+              "explanation": "The response provides a basic comparison between the two shirts, mentioning fit, price difference, and brand reliability. It does offer a clear recommendation (slim fit has better value) with some reasoning. However, it falls short in several areas: it doesn't reference specific product attributes like ratings, fabric quality, or detailed specs; it lacks a thorough price-to-value analysis; and it doesn't address specific use cases. The comparison is minimal and lacks the depth needed for a stronger evaluation."
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "error_001",
+          "task_type": "error_recovery",
+          "completed": true,
+          "success": true,
+          "actions_taken": 5,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 1.0,
+          "metrics": {
+            "error_description": "Wrong fit - should be slim fit",
+            "error_fixed": true,
+            "error_identified": true,
+            "actions_taken": 5,
+            "expected_actions": 10,
+            "initial_cart_items": 1,
+            "expected_cart_items": 1,
+            "final_cart_items": 1
+          },
+          "scoring_breakdown": [
+            {
+              "name": "error_fixed",
+              "weight": 0.7,
+              "raw_value": true,
+              "normalized_score": 1.0,
+              "explanation": "LLM confirmed match"
+            },
+            {
+              "name": "error_identified",
+              "weight": 0.1,
+              "raw_value": true,
+              "normalized_score": 1.0,
+              "explanation": "Agent acknowledged error"
+            },
+            {
+              "name": "efficiency",
+              "weight": 0.2,
+              "raw_value": 5,
+              "normalized_score": 1.0,
+              "explanation": "Efficient: 5 actions (expected 10)"
+            }
+          ],
+          "error": null
+        }
+      ],
+      "aggregate": {
+        "total_tasks": 8,
+        "successful_tasks": 4,
+        "average_score": 0.6447686511767398,
+        "average_time": 0.0,
+        "by_task_type": {
+          "budget_constrained": {
+            "avg_score": 0.666574604706959,
+            "count": 2,
+            "success_rate": 0.5
+          },
+          "preference_memory": {
+            "avg_score": 0.5,
+            "count": 2,
+            "success_rate": 0.5
+          },
+          "negative_constraint": {
+            "avg_score": 0.6875,
+            "count": 2,
+            "success_rate": 0.5
+          },
+          "comparative_reasoning": {
+            "avg_score": 0.45,
+            "count": 1,
+            "success_rate": 0.0
+          },
+          "error_recovery": {
+            "avg_score": 1.0,
+            "count": 1,
+            "success_rate": 1.0
+          }
+        }
+      }
+    }
+  ]
+}
