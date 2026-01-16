@@ -3,7 +3,7 @@ agentbeats_id = "019bbbcc-ab5d-7600-bb25-b05592423203"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", OPENAI_API_BASE = "${OPENAI_API_BASE}", LLM_MODEL = "${LLM_MODEL}" }
 
 [[participants]]
-agentbeats_id = "019bbbe2-5af6-79d2-8932-d59127888f8f"
+agentbeats_id = "019bc88d-d2d0-7ff3-a5a6-ac200b1475f1"
 name = "shopper"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", OPENAI_API_BASE = "${OPENAI_API_BASE}", LLM_MODEL = "${LLM_MODEL}" }
 
