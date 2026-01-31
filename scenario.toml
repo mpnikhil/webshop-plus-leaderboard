@@ -7,6 +7,7 @@ agentbeats_id = "019bbbe2-5af6-79d2-8932-d59127888f8f"
 name = "shopper"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", OPENAI_API_BASE = "${OPENAI_API_BASE}", LLM_MODEL = "${LLM_MODEL}" }
 
+# trigger 3
 [config]
 num_tasks = 8
 task_types = ["all"]
