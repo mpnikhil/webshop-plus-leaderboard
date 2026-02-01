@@ -1,0 +1,464 @@
+{
+  "participants": {
+    "shopper": "019bbbe2-5af6-79d2-8932-d59127888f8f"
+  },
+  "results": [
+    {
+      "assessment_id": "48c24a44-c146-4326-975b-e8e54bf4ea15",
+      "timestamp": "2026-02-01T07:14:44.623962",
+      "participants": {
+        "shopper": "http://shopper:9009/"
+      },
+      "config": {
+        "task_types": [
+          "all"
+        ],
+        "num_tasks": 10,
+        "timeout_per_task": 300,
+        "include_memory_tasks": true
+      },
+      "results": [
+        {
+          "task_id": "budget_001",
+          "task_type": "budget_constrained",
+          "completed": true,
+          "success": true,
+          "actions_taken": 6,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.7490483348659758,
+          "metrics": {
+            "budget": 50.0,
+            "total_spent": 16.983888378008093,
+            "required_items_matched": 1,
+            "required_items_total": 2,
+            "optimization_goal": "minimize_cost"
+          },
+          "scoring_breakdown": [
+            {
+              "name": "budget_compliance",
+              "weight": 0.3,
+              "raw_value": 16.983888378008093,
+              "normalized_score": 1.0,
+              "explanation": "Within budget: $16.98 / $50.00"
+            },
+            {
+              "name": "item_completion",
+              "weight": 0.4,
+              "raw_value": {
+                "required": 1,
+                "optional": 0
+              },
+              "normalized_score": 0.5,
+              "explanation": "Matched 1/2 required items"
+            },
+            {
+              "name": "quality_optimization",
+              "weight": 0.3,
+              "raw_value": "minimize_cost",
+              "normalized_score": 0.8301611162199192,
+              "explanation": "Cost minimization: saved $33.02 (66%)"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "budget_002",
+          "task_type": "budget_constrained",
+          "completed": true,
+          "success": false,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.3942,
+          "metrics": {
+            "budget": 35.0,
+            "total_spent": 10.99,
+            "required_items_matched": 0,
+            "required_items_total": 1,
+            "optimization_goal": "maximize_quality"
+          },
+          "scoring_breakdown": [
+            {
+              "name": "budget_compliance",
+              "weight": 0.3,
+              "raw_value": 10.99,
+              "normalized_score": 1.0,
+              "explanation": "Within budget: $10.99 / $35.00"
+            },
+            {
+              "name": "item_completion",
+              "weight": 0.4,
+              "raw_value": {
+                "required": 0,
+                "optional": 0
+              },
+              "normalized_score": 0.0,
+              "explanation": "Matched 0/1 required items"
+            },
+            {
+              "name": "quality_optimization",
+              "weight": 0.3,
+              "raw_value": "maximize_quality",
+              "normalized_score": 0.314,
+              "explanation": "Quality optimization: 31% of budget utilized"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "memory_001",
+          "task_type": "preference_memory",
+          "completed": false,
+          "success": true,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 1.0,
+          "metrics": {
+            "attribute_to_recall": "fit",
+            "acceptable_values": [
+              "slim fit",
+              "slim",
+              "tailored"
+            ]
+          },
+          "scoring_breakdown": [
+            {
+              "name": "recall_accuracy",
+              "weight": 0.6,
+              "raw_value": [
+                "slim fit",
+                "slim",
+                "tailored"
+              ],
+              "normalized_score": 1.0,
+              "explanation": "LLM confirmed preference recall"
+            },
+            {
+              "name": "consistency",
+              "weight": 0.4,
+              "raw_value": null,
+              "normalized_score": 1.0,
+              "explanation": "Consistency implied by accurate recall in single-session test"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "memory_002",
+          "task_type": "preference_memory",
+          "completed": true,
+          "success": false,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.0,
+          "metrics": {
+            "attribute_to_recall": "type",
+            "acceptable_values": [
+              "loafers",
+              "slip-ons",
+              "loafer"
+            ]
+          },
+          "scoring_breakdown": [
+            {
+              "name": "recall_accuracy",
+              "weight": 0.6,
+              "raw_value": [
+                "loafers",
+                "slip-ons",
+                "loafer"
+              ],
+              "normalized_score": 0.0,
+              "explanation": "LLM rejected preference match"
+            },
+            {
+              "name": "consistency",
+              "weight": 0.4,
+              "raw_value": null,
+              "normalized_score": 0.0,
+              "explanation": "Consistency implied by accurate recall in single-session test"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "negative_001",
+          "task_type": "negative_constraint",
+          "completed": true,
+          "success": false,
+          "actions_taken": 4,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.375,
+          "metrics": {
+            "violations": [
+              "forbidden attribute: slim fit"
+            ],
+            "violation_count": 1,
+            "forbidden_attributes": [
+              "slim fit"
+            ],
+            "forbidden_terms": [],
+            "required_attributes": []
+          },
+          "scoring_breakdown": [
+            {
+              "name": "constraint_satisfaction",
+              "weight": 0.5,
+              "raw_value": 1,
+              "normalized_score": 0.5,
+              "explanation": "1 violation(s): forbidden attribute: slim fit"
+            },
+            {
+              "name": "positive_match",
+              "weight": 0.5,
+              "raw_value": [],
+              "normalized_score": 1.0,
+              "explanation": "No required attributes specified"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "negative_002",
+          "task_type": "negative_constraint",
+          "completed": true,
+          "success": false,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.375,
+          "metrics": {
+            "violations": [
+              "forbidden attribute: slip on"
+            ],
+            "violation_count": 1,
+            "forbidden_attributes": [
+              "slip-ons",
+              "slip on"
+            ],
+            "forbidden_terms": [],
+            "required_attributes": [
+              "rubber sole"
+            ]
+          },
+          "scoring_breakdown": [
+            {
+              "name": "constraint_satisfaction",
+              "weight": 0.5,
+              "raw_value": 1,
+              "normalized_score": 0.5,
+              "explanation": "1 violation(s): forbidden attribute: slip on"
+            },
+            {
+              "name": "positive_match",
+              "weight": 0.5,
+              "raw_value": [
+                "rubber sole"
+              ],
+              "normalized_score": 1.0,
+              "explanation": "Matched 1/1 required attributes"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "compare_001",
+          "task_type": "comparative_reasoning",
+          "completed": false,
+          "success": true,
+          "actions_taken": 3,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.55,
+          "metrics": {
+            "products_explored": 1,
+            "minimum_required": 2,
+            "justification_provided": true,
+            "justification_length": 344,
+            "comparison_request": "Compare two dress shirts - one slim fit and one classic fit. Which has better value?"
+          },
+          "scoring_breakdown": [
+            {
+              "name": "exploration",
+              "weight": 0.3,
+              "raw_value": 1,
+              "normalized_score": 0.5,
+              "explanation": "Only explored 1/2 required products"
+            },
+            {
+              "name": "justification_provided",
+              "weight": 0.2,
+              "raw_value": true,
+              "normalized_score": 1.0,
+              "explanation": "Agent provided comparison justification"
+            },
+            {
+              "name": "justification_quality",
+              "weight": 0.5,
+              "raw_value": "The Amazon Essentials slim-fit dress shirt ($18.50) offers a standard dress shirt style at a lower price compared to the novelty classic-fit t-shirt ($19.99). While both fit within the $100 budget, th",
+              "normalized_score": 0.4,
+              "explanation": "The content provides a basic comparison of two dress shirts with mentions of price and fit type. It attempts to address the value question by noting the slim-fit is more affordable. However, it's missing key factors like specific product attributes (fabric quality, durability, etc.), detailed feature comparison, and more comprehensive value analysis. The response lacks references to ratings, specs, or reviews that would support the value assessment. While it makes a clear recommendation, the reasoning is limited to price and a vague reference to design style without addressing how fit types might suit different body types or occasions."
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "compare_002",
+          "task_type": "comparative_reasoning",
+          "completed": false,
+          "success": true,
+          "actions_taken": 9,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 0.75,
+          "metrics": {
+            "products_explored": 3,
+            "minimum_required": 2,
+            "justification_provided": true,
+            "justification_length": 231,
+            "comparison_request": "I need loafers. Compare rubber sole vs leather sole options and recommend."
+          },
+          "scoring_breakdown": [
+            {
+              "name": "exploration",
+              "weight": 0.3,
+              "raw_value": 3,
+              "normalized_score": 1.0,
+              "explanation": "Explored 3 products (min: 2)"
+            },
+            {
+              "name": "justification_provided",
+              "weight": 0.2,
+              "raw_value": true,
+              "normalized_score": 1.0,
+              "explanation": "Agent provided comparison justification"
+            },
+            {
+              "name": "justification_quality",
+              "weight": 0.5,
+              "raw_value": "Compared rubber sole (MCICI at $23.44) and leather sole (VanciLin at $35.53) loafers. Leather soles offer better durability and style, while rubber soles are more casual and cheaper. Chose leather for",
+              "normalized_score": 0.5,
+              "explanation": "The response provides a basic comparison of rubber sole (MCICI at $23.44) and leather sole (VanciLin at $35.53) loafers, mentioning price differences and contrasting features like durability/style for leather vs casual look for rubber. It makes a clear recommendation (chose leather) with simple reasoning about \"premium quality within budget.\" However, it falls short on several rubric criteria: it doesn't reference actual product ratings or reviews, provides minimal analysis of the specific features, and doesn't address the specific use case for loafers that wasn't mentioned in the query. The price-to-value consideration is present but very basic. The analysis lacks depth and supporting evidence from product data."
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "error_001",
+          "task_type": "error_recovery",
+          "completed": false,
+          "success": false,
+          "actions_taken": 5,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 1.0,
+          "metrics": {
+            "error_description": "Wrong fit - should be slim fit",
+            "error_fixed": true,
+            "error_identified": true,
+            "actions_taken": 5,
+            "expected_actions": 10,
+            "initial_cart_items": 1,
+            "expected_cart_items": 1,
+            "final_cart_items": 1
+          },
+          "scoring_breakdown": [
+            {
+              "name": "error_fixed",
+              "weight": 0.7,
+              "raw_value": true,
+              "normalized_score": 1.0,
+              "explanation": "LLM confirmed match"
+            },
+            {
+              "name": "error_identified",
+              "weight": 0.1,
+              "raw_value": true,
+              "normalized_score": 1.0,
+              "explanation": "Agent acknowledged error"
+            },
+            {
+              "name": "efficiency",
+              "weight": 0.2,
+              "raw_value": 5,
+              "normalized_score": 1.0,
+              "explanation": "Efficient: 5 actions (expected 10)"
+            }
+          ],
+          "error": null
+        },
+        {
+          "task_id": "error_002",
+          "task_type": "error_recovery",
+          "completed": false,
+          "success": false,
+          "actions_taken": 5,
+          "time_elapsed_seconds": 0.0,
+          "overall_score": 1.0,
+          "metrics": {
+            "error_description": "Wrong shoe type - should be loafers",
+            "error_fixed": true,
+            "error_identified": true,
+            "actions_taken": 5,
+            "expected_actions": 10,
+            "initial_cart_items": 1,
+            "expected_cart_items": 1,
+            "final_cart_items": 1
+          },
+          "scoring_breakdown": [
+            {
+              "name": "error_fixed",
+              "weight": 0.7,
+              "raw_value": true,
+              "normalized_score": 1.0,
+              "explanation": "LLM confirmed match"
+            },
+            {
+              "name": "error_identified",
+              "weight": 0.1,
+              "raw_value": true,
+              "normalized_score": 1.0,
+              "explanation": "Agent acknowledged error"
+            },
+            {
+              "name": "efficiency",
+              "weight": 0.2,
+              "raw_value": 5,
+              "normalized_score": 1.0,
+              "explanation": "Efficient: 5 actions (expected 10)"
+            }
+          ],
+          "error": null
+        }
+      ],
+      "aggregate": {
+        "total_tasks": 10,
+        "successful_tasks": 4,
+        "average_score": 0.6193248334865975,
+        "average_time": 0.0,
+        "by_task_type": {
+          "budget_constrained": {
+            "avg_score": 0.5716241674329878,
+            "count": 2,
+            "success_rate": 0.5
+          },
+          "preference_memory": {
+            "avg_score": 0.5,
+            "count": 2,
+            "success_rate": 0.5
+          },
+          "negative_constraint": {
+            "avg_score": 0.375,
+            "count": 2,
+            "success_rate": 0.0
+          },
+          "comparative_reasoning": {
+            "avg_score": 0.65,
+            "count": 2,
+            "success_rate": 1.0
+          },
+          "error_recovery": {
+            "avg_score": 1.0,
+            "count": 2,
+            "success_rate": 0.0
+          }
+        }
+      }
+    }
+  ]
+}
