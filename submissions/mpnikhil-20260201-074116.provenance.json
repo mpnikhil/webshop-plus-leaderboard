@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/mpnikhil/webshop-plus-green@sha256:b1cfae82769f3ed81f41e18023f1f42dc0ee43b941ccf6266249d08339c206c9",
+    "shopper": "ghcr.io/mpnikhil/webshop-plus-purple@sha256:6829059adf035764d11bac70df7caa9763157cf12dd0d7e36722b4380280f3fb",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-02-01T07:41:15Z",
+  "github_actions": {
+    "run_url": "https://github.com/mpnikhil/webshop-plus-leaderboard/actions/runs/21558781308",
+    "run_logs_url": "https://api.github.com/repos/mpnikhil/webshop-plus-leaderboard/actions/runs/21558781308/logs",
+    "ref": "refs/heads/assessment-5",
+    "sha": "f0d1f30d4970986708560aa7ea6c7f220f1e3af9",
+    "repository_url": "https://github.com/mpnikhil/webshop-plus-leaderboard",
+    "workflow_ref": "mpnikhil/webshop-plus-leaderboard/.github/workflows/run-scenario.yml@refs/heads/assessment-5",
+    "workflow_sha": "f0d1f30d4970986708560aa7ea6c7f220f1e3af9"
+  }
+}
